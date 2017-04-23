@@ -3,11 +3,158 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GestionEtudiantHub"
+    xmlns:models="using:GestionEtudiantHub"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:GestionEtudiantHub"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Scroll -->
+
+        <GridView ItemsSource="{x:Bind Salles}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="models:Salle">
+                    <StackPanel>
+                        <TextBlock FontSize="16" Text="{x:Bind Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                      Grid.RowSpan="4" 
+                      BorderBrush="Black"
+                      BorderThickness="1"/>
+
+
+
+        <!--Relative panel pour les buttons -->
+
+        <RelativePanel Grid.Column="2" 
+                       MaxHeight="100" 
+                       BorderBrush="Black" 
+                       BorderThickness="1">
+
+            <Button Name="Ajouter" 
+                Content="Ajouter" 
+                Margin="100,5,0,0"/>
+
+            <Button Name="Modifier" 
+                Content="Modifier"
+                Margin="300,5,0,0"/>
+
+            <Button Name="Supprimer" 
+                Content="Supprimer" 
+                Margin="500,5,0,0"/>
+        </RelativePanel>
+
+        <!-- CheckBox -->
+
+        <CheckBox Name="Huit" 
+                  Content="8h - 9h" 
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="50,50,0,0"/>
+
+        <CheckBox Name="Neuf"
+                  Content="9h - 10h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="50,100,0,0"/>
+
+        <CheckBox Name="Dix"
+                  Content="10h - 11h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="50,150,0,0"/>
+
+        <CheckBox Name="Onze"
+                  Content="11h - 12h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="200,50,0,0"/>
+
+        <CheckBox Name="Douze"
+                  Content="12h - 13h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="200,100,0,0"/>
+
+        <CheckBox Name="Treize"
+                  Content="13h - 14h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="200,150,0,0"/>
+
+        <CheckBox Name="Quatorze"
+                  Content="14h - 15h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="350,50,0,0"/>
+
+        <CheckBox Name="Quinze"
+                  Content="15h - 16h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="350,100,0,0"/>
+
+        <CheckBox Name="Seize"
+                  Content="16h - 17h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="350,150,0,0"/>
+
+        <CheckBox Name="DixSept"
+                  Content="17h - 18h"
+                  VerticalAlignment="Top"
+                  Grid.Row="3"
+                  Grid.Column="2"
+                  Margin="500,100,0,0"/>
+
+        <!-- Relative pour button OK -->
+
+        <RelativePanel Grid.Row="3" 
+                       Grid.Column="2"
+                       MaxHeight="100">
+
+            <Button Name="OK"
+                Content="OK"
+                Margin="325,50,0,0"/>
+        </RelativePanel>
+
+
+
+
+        <Grid BorderBrush="Black"
+              BorderThickness="1,1,1,1"
+              Grid.Column="1"
+              Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
 
     </Grid>
 </Page>
