@@ -3,13 +3,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:GestionEtudiantHub"
-    xmlns:models="using:GestionEtudiantHub"
+    xmlns:models="using:GestionEtudiantHub.models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:data="using:GestionEtudiantHub"
     mc:Ignorable="d">
 
-    <Grid Background="White">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="auto"/>
@@ -21,8 +20,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Scroll -->
-
         <GridView ItemsSource="{x:Bind Salles}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="models:Salle">
@@ -32,14 +29,6 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <ScrollViewer HorizontalScrollBarVisibility="Visible"
-                      Grid.RowSpan="4" 
-                      BorderBrush="Black"
-                      BorderThickness="1"/>
-
-
-
-        <!--Relative panel pour les buttons -->
 
         <RelativePanel Grid.Column="2" 
                        MaxHeight="100" 
@@ -142,9 +131,6 @@
                 Margin="325,50,0,0"/>
         </RelativePanel>
 
-
-
-
         <Grid BorderBrush="Black"
               BorderThickness="1,1,1,1"
               Grid.Column="1"
@@ -154,7 +140,6 @@
             </Grid.RowDefinitions>
 
         </Grid>
-
 
     </Grid>
 </Page>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Using.GestionEtudiantHub.Models
+namespace GestionEtudiantHub.models
 {
     public class Salle
     {
