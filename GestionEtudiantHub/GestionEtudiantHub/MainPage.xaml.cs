@@ -29,6 +29,8 @@ namespace GestionDesSalles
         {
             this.InitializeComponent();
             Salles = SalleManager.GetSalles();
+
+            var must_fixed = true;
         }
     }
 }
